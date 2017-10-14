@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { CommunityDetailPage } from '../community-detail/community-detail';
 
 @IonicPage()
@@ -9,7 +9,8 @@ import { CommunityDetailPage } from '../community-detail/community-detail';
 })
 export class CommunityListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public app: App) {
+    this.goDetail();
   }
 
   ionViewDidLoad() {
@@ -17,6 +18,7 @@ export class CommunityListPage {
   }
 
   goDetail() {
-    this.navCtrl.push(CommunityDetailPage);
+    this.app.getRootNav().push(CommunityDetailPage);
+    // this.navCtrl.push(CommunityDetailPage);
   }
 }

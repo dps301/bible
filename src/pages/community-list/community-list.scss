@@ -1,3 +1,15 @@
 page-community-list {
+    ion-row {
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
+            margin: 10px;
+            border: 1px solid black;
+            height: 100px;
+            background: yellow;
+            text-align: center;
+        }
+    }
 }
