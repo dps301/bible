@@ -10,7 +10,6 @@ import { CommunityDetailPage } from '../community-detail/community-detail';
 export class CommunityListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public app: App) {
-    this.goDetail();
   }
 
   ionViewDidLoad() {
@@ -19,6 +18,5 @@ export class CommunityListPage {
 
   goDetail() {
     this.app.getRootNav().push(CommunityDetailPage);
-    // this.navCtrl.push(CommunityDetailPage);
   }
 }
