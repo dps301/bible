@@ -2,46 +2,35 @@
   <ion-slides>
     <ion-slide>
       <div>
-        창세기 1장 1-4절
-      </div>
-      <div>
-        2017-10-14
+        {{data.title}}
       </div>
       <div *ngFor="let item of bibleList">
-        {{item}}
+        {{item.ord}} {{item.content}}
+      </div>
+      <div>
+        <button> 읽음 </button>
       </div>
     </ion-slide>
     <ion-slide>
       <h1>해석</h1>
       <div>
-        아멘
+        {{data.explanation}}
       </div>
     </ion-slide>
     <ion-slide>
       <h1>코멘트</h1>
-      <div class="feed">
+      <div class="feed" *ngFor="let comment of data.comment">
         <div>
-          엠제이
+          {{comment.name}}
         </div>
         <div>
-          말씀이 너무 은혜롭네요
-        </div>
-      </div>
-      <div class="feed">
-        <div>
-          용사마
-        </div>
-        <div>
-          말씀이 너무 은혜롭네요2
+          {{comment.content}}
         </div>
       </div>
-      <div class="feed">
-        <div>
-          머호
-        </div>
-        <div>
-          말씀이 너무 은혜롭네요3
-        </div>
+      <div>
+        <span>데이터</span>
+        <span class="input"><input type="text" [(ngModel)]="content"></span>
+        <span><button (click)="addComment()">추가</button></span>
       </div>
     </ion-slide>
   </ion-slides>

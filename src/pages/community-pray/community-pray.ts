@@ -14,12 +14,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'community-pray.html',
 })
 export class CommunityPrayPage {
-
+  team_no:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CommunityPrayPage');
+    
   }
 
 }

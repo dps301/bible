@@ -5,11 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
+import { HttpModule } from "@angular/http";
+import { HttpService } from '../services/http.service';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CommunityListPageModule } from '../pages/community-list/community-list.module';
 import { BiblePageModule } from '../pages/bible/bible.module';
 import { MyPageModule } from '../pages/my/my.module';
+import { ServerAddr } from '../services/server.addr';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { MyPageModule } from '../pages/my/my.module';
     BiblePageModule,
     MyPageModule,
     SuperTabsModule.forRoot(),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,6 +36,8 @@ import { MyPageModule } from '../pages/my/my.module';
   providers: [
     StatusBar,
     SplashScreen,
+    HttpService,
+    ServerAddr,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

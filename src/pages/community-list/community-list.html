@@ -1,34 +1,9 @@
 <ion-content padding>
   <ion-row>
-    <ion-col col-6 (click)="goDetail()">
+    <ion-col col-6 (click)="goDetail(team.team_no)" *ngFor="let team of teams">
       <div class="item">
-        모임
+        {{team.name}}
       </div>
     </ion-col>
-    <ion-col col-6 (click)="goDetail()">
-      <div class="item">
-        모임
-      </div>
-    </ion-col>
-    <ion-col col-6 (click)="goDetail()">
-      <div class="item">
-        모임
-      </div>
-    </ion-col>
-    <ion-col col-6 (click)="goDetail()">
-      <div class="item">
-        모임
-      </div>
-    </ion-col>
-    <ion-col col-6 (click)="goDetail()">
-        <div class="item">
-          모임
-        </div>
-      </ion-col>
-      <ion-col col-6 (click)="goDetail()">
-        <div class="item">
-          모임
-        </div>
-      </ion-col>
   </ion-row>
 </ion-content>

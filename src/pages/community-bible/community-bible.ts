@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpService } from '../../services/http.service';
 
 @IonicPage()
 @Component({
@@ -7,16 +8,42 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'community-bible.html',
 })
 export class CommunityBiblePage {
-  bibleList: Array<any> = [
-    ' 1.	태초에 하나님이 천지를 창조하시니라',
-     '2.	땅이 혼돈하고 공허하며 흑암이 깊음 위에 있고 하나님의 영은 수면 위에 운행하시니라',
-     '3.	하나님이 이르시되 빛이 있으라 하시니 빛이 있었고',
-     '4.	빛이 하나님이 보시기에 좋았더라 하나님이 빛과 어둠을 나누사'
-   ];
+  team_no;
+  content;
+  recent = -1;
+  data:any={
+    "board_no": 2,
+    "team_no": 1,
+    "ord": 2,
+    "explanation": "-",
+    "reg_dttm": "2017-10-18T11:08:22.000Z",
+    "title":"title"
+    };
+  bibleList: Array<any>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http:HttpService) {
+    this.team_no = this.navParams.get('team_no')
   }
 
   ionViewDidLoad() {
+    this.load(this.recent);
+  }
+  load(no){
+    this.http.get(`/team/board/${no}?team_no=${this.team_no}`)
+    .subscribe(data =>{
+      this.data = data.json();
+      this.bibleList = this.data.bible;
+    })
+  }
+  addComment(){
+    let body = {
+      content:this.content,
+      board_no:this.data.board_no,
+      bible:this.bibleList
+    }
+    this.http.post('/team/board/comment',body)
+    .subscribe(data =>{
+      this.load(this.recent);
+    })
   }
 }

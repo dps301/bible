@@ -5,8 +5,8 @@
 </ion-header>
 <ion-content>
   <super-tabs id="detail" [tabsPlacement]="'bottom'">
-    <super-tab [root]="page1" title="성경"></super-tab>
-    <super-tab [root]="page2" title="기도나눔"></super-tab>
-    <super-tab [root]="page3" title="피드"></super-tab>
+    <super-tab [root]="page1" title="성경" [rootParams]="paramsTab"></super-tab>
+    <super-tab [root]="page2" title="기도나눔" [rootParams]="paramsTab"></super-tab>
+    <super-tab [root]="page3" title="피드" [rootParams]="paramsTab"></super-tab>
   </super-tabs>
 </ion-content>
