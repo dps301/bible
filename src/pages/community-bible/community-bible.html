@@ -1,0 +1,37 @@
+<ion-content padding>
+  <ion-slides>
+    <ion-slide>
+      <div>
+        {{data.title}}
+      </div>
+      <div *ngFor="let item of bibleList">
+        {{item.ord}} {{item.content}}
+      </div>
+      <div>
+        <button> 읽음 </button>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <h1>해석</h1>
+      <div>
+        {{data.explanation}}
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <h1>코멘트</h1>
+      <div class="feed" *ngFor="let comment of data.comment">
+        <div>
+          {{comment.name}}
+        </div>
+        <div>
+          {{comment.content}}
+        </div>
+      </div>
+      <div>
+        <span>데이터</span>
+        <span class="input"><input type="text" [(ngModel)]="content"></span>
+        <span><button (click)="addComment()">추가</button></span>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
