@@ -13,6 +13,7 @@ import { CommunityListPageModule } from '../pages/community-list/community-list.
 import { BiblePageModule } from '../pages/bible/bible.module';
 import { MyPageModule } from '../pages/my/my.module';
 import { ServerAddr } from '../services/server.addr';
+import { SliderModule } from '../modules/slider/slider.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ServerAddr } from '../services/server.addr';
     MyPageModule,
     SuperTabsModule.forRoot(),
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    SliderModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
