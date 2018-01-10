@@ -4,7 +4,7 @@ import { SliderComponent } from './slider';
 
 @NgModule({
     declarations: [ SliderComponent ],
-    imports: [],
+    imports: [ CommonModule ],
     exports: [ SliderComponent ],
     providers: [],
 })
