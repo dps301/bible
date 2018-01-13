@@ -1,3 +1,14 @@
 page-community-detail {
+    super-tabs-toolbar {
+        .toolbar-background {
+            background: #7f5338;
+        }
+        .tab-buttons-container {
+            color: #ffe543;
 
+            .indicator {
+                display: none;
+            }
+        }
+    }
 }

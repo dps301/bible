@@ -1,36 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <div class="tabs">
+      <div [ngClass]="{'active': selected_tab == 0}" class="item" (click)="goToSlide(0)">
+        오늘의 말씀 읽기
+      </div>
+      <div [ngClass]="{'active': selected_tab == 1}" class="item" (click)="goToSlide(1)">
+        해석 읽기
+      </div>
+      <div [ngClass]="{'active': selected_tab == 2}" class="item" (click)="goToSlide(2)">
+        묵상 나누기
+      </div>
+      <div class="indicator" [ngStyle]="{'margin-left': (selected_tab + 1) * 33.3 + '%'}"></div>
+    </div>
+  </ion-navbar>
+</ion-header>
 <ion-content padding>
-  <ion-slides>
+  <ion-slides (ionSlideDidChange)="slideChanged()">
     <ion-slide>
-      <div>
-        {{data.title}}
+      <div class="date">
+        2017.11.08
       </div>
-      <div *ngFor="let item of bibleList">
-        {{item.ord}} {{item.content}}
-      </div>
-      <div>
-        <button> 읽음 </button>
+      <div class="bible">
+        <div class="bible-title">
+          마가복음 1장 1절 ~ 18절
+        </div>
+        <div class="content">
+          <div class="row">
+            하나님의 아들 예수 그리스도의 복음의 시작이라
+            </div>
+        </div>
       </div>
     </ion-slide>
+
     <ion-slide>
-      <h1>해석</h1>
-      <div>
+      <div class="date">
+        2017.11.08
+      </div>
+      <div class="bible-title">
+        마가복음 1장 1절 ~ 18절
+      </div>
+      <div class="explanation">
         {{data.explanation}}
       </div>
     </ion-slide>
+    
     <ion-slide>
-      <h1>코멘트</h1>
-      <div class="feed" *ngFor="let comment of data.comment">
-        <div>
-          {{comment.name}}
-        </div>
-        <div>
-          {{comment.content}}
-        </div>
+      <div class="date">
+        2017.11.08
       </div>
-      <div>
-        <span>데이터</span>
-        <span class="input"><input type="text" [(ngModel)]="content"></span>
-        <span><button (click)="addComment()">추가</button></span>
+      <div class="bible-title">
+        마가복음 1장 1절 ~ 18절
+      </div>
+      <div class="feed">
+        <div class="feed-list">
+          <div class="item">
+            <div square class="profile">
+              <img square src="http://www.bigshocking.com/wp-content/uploads/2014/10/Stare-at-a-Random-Person.jpg" alt="">
+            </div>
+            <div class="comment">
+              2천년전 주님이 오실것을 알고 예비한 요한처럼 우리가 매 순간 주님을 바라고 기다리며 내 삶을 주께 드리는 연습을 해야겠다.
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div square class="profile" >
+            <img square src="http://www.bigshocking.com/wp-content/uploads/2014/10/Stare-at-a-Random-Person.jpg" alt="">
+          </div>
+          <div class="comment">
+            <input type="text" placeholder="묵상한 내용을 나눠주세요.">
+          </div>
+        </div>
       </div>
     </ion-slide>
   </ion-slides>

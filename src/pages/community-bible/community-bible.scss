@@ -1,21 +1,129 @@
 page-community-bible {
+    ion-header {
+        ion-navbar {
+            min-height: 45px !important; 
+            padding: 0px 15px !important;
+        }
+
+        .toolbar-background {
+            background: white;
+            border-style: none !important;
+        }
+
+        .tabs {
+            position: relative;
+            width: 100%;
+            min-height: 45px;
+            display: flex;
+            justify-content: space-between;
+
+            .item {
+                line-height: 45px;
+                flex-basis: 33.3%;
+                flex-shrink: 0;
+                text-align: center;
+                color: #a7a9ac;
+            }
+            .active {
+                color: #7f5338;
+            }
+            .indicator {
+                position: absolute;
+                bottom: 0px;
+                width: 33.3%;
+                height: 3px;
+                background: #7f5338;
+                transform: translateX(-100%);
+                transition: margin-left 200ms;
+            }
+        }
+    }
     .scroll-content {
-        background: gray;
+        background: #f3f3f5;
     }
 
     ion-slides {
         background: white;
 
         .slide-zoom {
+            padding: 10px 20px;
+            height: 100%;
             text-align: left;
-        }
-    }
 
-    .feed {
-        height: 100px;
-        border: 1px solid black;
-        margin: 10px 20px;
-    }
-    .input {
+            display: flex;
+            flex-direction: column;
+
+            .date {
+                flex-shrink: 0;
+                font-size: 3rem;
+                padding: 10px 0px;
+                border-bottom: 2px solid #7f5338;
+            }
+            .bible-title {
+                flex-shrink: 0;
+                font-size: 1.2rem;
+                margin: 10px 0px;
+            }
+
+            .bible {
+                flex-grow: 1;
+                font-size: 1.2rem;
+
+                .content {
+                    .row {
+                        
+                    }
+                }
+            }
+
+            .explanation {
+                flex-grow: 1;
+            }
+
+            .feed {
+                flex-grow: 1;
+                padding: 10px;
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .feed-list {
+                    flex-grow: 1;
+                }
+                
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .profile {
+                        flex-basis: 17%;
+                        flex-shrink: 0;
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 50%;
+
+                        img {
+                            object-fit: cover;
+                            width: 100%;
+                        }
+                    }
+                    .comment {
+                        flex-shrink: 0;
+                        flex-basis: 75%;
+                        font-size: 1.2rem;
+
+                        input {
+                            width: 100%;
+                            border: 1px solid #dfdfe0 !important;
+                            border-radius: 25px;
+                            padding: 5px 10px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

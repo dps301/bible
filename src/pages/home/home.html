@@ -1,14 +1,23 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>header</ion-title>
-  </ion-navbar>
-</ion-header>
 <ion-content>
-  <!-- <super-tabs [tabsPlacement]="'bottom'">
-    <super-tab [root]="page1" title="모임"></super-tab>
-    <super-tab [root]="page2" title="MY"></super-tab>
-    <super-tab [root]="page3" title="성경"></super-tab>
-  </super-tabs> -->
-  <cb-slider></cb-slider>
+  <div class="main-img">
+    <img src="https://salemnet.vo.llnwd.net/media/cms/BST/33754-bible1200.800w.tn.jpg" alt="">
+  </div>
+  <div class="com-list">
+    <div class="com-row">
+      <div class="com-item" *ngFor="let item of com_list">
+        <div class="inner" square (click)="goDetail(item.id)">
+          <div class="img" square [ngStyle]="{'background': 'url(' + item.img + ')'}"></div>
+          <div class="name">
+            {{item.name}}
+            </div>
+        </div>
+      </div>
+      <div class="com-item">
+        <div class="inner" square>
+          +
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
     

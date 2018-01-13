@@ -9,31 +9,34 @@ import { HttpModule } from "@angular/http";
 import { HttpService } from '../services/http.service';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { CommunityListPageModule } from '../pages/community-list/community-list.module';
 import { BiblePageModule } from '../pages/bible/bible.module';
 import { MyPageModule } from '../pages/my/my.module';
 import { ServerAddr } from '../services/server.addr';
 import { SliderModule } from '../modules/slider/slider.module';
+import { SquareModule } from '../modules/square/sqare.module';
+import { CommunityDetailPageModule } from '../pages/community-detail/community-detail.module';
+import { HomePageModule } from '../pages/home/home.module';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   imports: [
     BrowserModule,
-    CommunityListPageModule,
+    SuperTabsModule.forRoot(),
+    IonicModule.forRoot(MyApp, {
+      mode: 'ios'
+    }),
+    HttpModule,
+    SliderModule,
     BiblePageModule,
     MyPageModule,
-    SuperTabsModule.forRoot(),
-    IonicModule.forRoot(MyApp),
-    HttpModule,
-    SliderModule
+    CommunityDetailPageModule,
+    HomePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   providers: [
     StatusBar,

@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { CommunityListPage } from './community-list';
+import { HomePage } from './home';
 import { CommunityDetailPageModule } from '../community-detail/community-detail.module';
+import { SquareModule } from '../../modules/square/sqare.module';
 
 @NgModule({
   declarations: [
-    CommunityListPage,
+    HomePage,
   ],
   imports: [
-    IonicPageModule.forChild(CommunityListPage),
+    IonicPageModule.forChild(HomePage),
+    SquareModule,
     CommunityDetailPageModule
   ],
 })
-export class CommunityListPageModule {}
+export class HomePageModule {}

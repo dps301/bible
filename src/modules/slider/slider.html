@@ -1,34 +1,22 @@
 <div id="touchSlider">
   <ul>
-      <li [ngClass]="getClass(0)">
-        <div class="content">
-          content 1
+    <li [ngClass]="getClass(i)" *ngFor="let item of prey_list; let i = index">
+      <div class="content">
+        <div class="profile">
+          <div class="thumbnail" square [ngStyle]="{'background': 'url(' + item.thumbnail + ')'}"></div>
+          <div>
+            <div class="title">
+              <span>{{item.name}}</span> 의 기도제목
+            </div>
+            <div class="date">
+              {{item.date}}
+            </div>
+          </div>
         </div>
-      </li>
-      <li [ngClass]="getClass(1)">
-        <div class="content">
-          content 2
+        <div class="prey">
+          {{item.prey}}
         </div>
-      </li>
-      <li [ngClass]="getClass(2)">
-        <div class="content">
-          content 3
-        </div>
-      </li>
-      <li [ngClass]="getClass(3)">
-        <div class="content">
-          content 4
-        </div>
-      </li>
-      <li [ngClass]="getClass(4)">
-        <div class="content">
-          content 5
-        </div>
-      </li>
-      <li [ngClass]="getClass(5)">
-        <div class="content">
-          content 6
-        </div>
-      </li>
+      </div>
+    </li>
   </ul>
 </div>

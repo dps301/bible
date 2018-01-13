@@ -1,3 +1,55 @@
 page-home {
+    .scroll-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #f3f3f5;
+    }
 
+    .main-img {
+        flex-basis: 35%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: black;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .com-list {
+        .com-row {
+            display: flex;
+            flex-wrap: wrap;
+
+            .com-item {
+                flex-basis: 50%;
+
+                .inner {
+                    margin: 10px;
+                    background: white;
+                    border: 1px solid;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .img {
+                        width: 40%;
+                        border-radius: 50%;
+                        background-size: cover !important;
+                        background-position: center !important;
+                        margin: 10px 0px;
+                    }
+                    .name {
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
 }

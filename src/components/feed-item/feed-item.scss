@@ -1,0 +1,127 @@
+feed-item {
+    .feed {
+        box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.1);
+        padding: 0px 10px;
+        background: white;
+
+        .date {
+            font-size: 1.2rem;
+            color: #adaeaf;
+        }
+        .name {
+            color: #745c4b;
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        .container {
+            border-bottom: 2px solid #dfdfe0;
+
+            .title {
+                border-bottom: 2px solid #dfdfe0;
+                padding: 20px 0px;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .profile {
+                    flex-basis: 50%;
+                    display: flex;
+                    align-items: center;
+
+                    .thumbnail {
+                        flex-basis: 25%;
+                        flex-shrink: 0;
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 50%;
+        
+                        img {
+                            object-fit: cover;
+                            width: 100%;
+                        }
+                    }
+
+                    .name {
+                        margin-left: 10px;
+                    }
+                }
+            }
+            .content {
+                padding: 20px 10px;
+            }
+        }
+        .comment {
+            padding: 10px 0px 20px 0px;
+            font-size: 1.2rem;
+            
+            .input-box {
+                padding: 0px 10px 10px 10px;
+                
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .thumbnail {
+                    flex-basis: 10%;
+                    flex-shrink: 0;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 50%;
+    
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
+
+                input {
+                    flex-basis: 85%;
+                    border-radius: 25px;
+                    border: 1px solid #dfdfe0;
+                    padding: 5px 15px;
+                }
+            }
+
+            .comment-list {
+                .comment-item {
+                    padding: 10px;
+
+                    .content {
+                        display: flex;
+                        align-items: flex-start;
+
+                        .thumbnail {
+                            flex-basis: 10%;
+                            flex-shrink: 0;
+                            position: relative;
+                            overflow: hidden;
+                            border-radius: 50%;
+            
+                            img {
+                                object-fit: cover;
+                                width: 100%;
+                            }
+                        }
+
+                        .name {
+                            flex-basis: 20%;
+                            flex-shrink: 0;
+                            font-size: 1.2rem;
+                            text-align: center;
+                        }
+
+                        .text {
+                            flex-grow: 1;
+                            font-weight: 600;
+                        }
+                    }
+                    .date {
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

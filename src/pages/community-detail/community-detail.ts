@@ -13,20 +13,18 @@ import { SuperTabs } from 'ionic2-super-tabs';
 })
 export class CommunityDetailPage {
   @ViewChild(SuperTabs) superTabs: SuperTabs;
-  
-  team_no:any;
 
   page1: any = CommunityBiblePage;
   page2: any = CommunityPrayPage;
   page3: any = CommunityFeedPage;
-  paramsTab;
+  
+  team_no: number = -1;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.team_no = this.navParams.get('team_no');
-    this.paramsTab = { team_no: this.team_no };
+    this.team_no = this.navParams.get('id');
   }
 
   ionViewDidLoad() {
     this.superTabs.enableTabsSwipe(false);
-    console.log('ionViewDidLoad CommunityDetailPage');
   }
 }

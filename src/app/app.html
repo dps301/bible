@@ -1,1 +1,21 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="container" side="left" type="overlay">
+    <ion-content>
+        <ion-list (click)="navGo()">
+            냐냐
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-header (click)="toggleMenu()" class="main-header">
+    <ion-toolbar>
+        <ion-buttons start>
+            <ion-icon class="menu-icon" name="ios-menu"></ion-icon>
+            <ion-icon *ngIf="show_back" class="menu-icon" name="ios-arrow-back"></ion-icon>
+        </ion-buttons>
+        <ion-title>
+            Co-Bible
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-nav #container [root]="rootPage"></ion-nav>
+</ion-content>
