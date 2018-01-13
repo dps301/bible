@@ -11,7 +11,6 @@ export class HomePage {
   
   constructor(public navCtrl: NavController, public app: App) {
     this.getComList();
-    this.goDetail(1);
   }
 
   getComList() {
